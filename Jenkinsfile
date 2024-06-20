@@ -7,7 +7,7 @@ TOKENAWS = credentials('controller-ssh-key')
     stages{
         stage('Deploy to Testing'){
             steps{
-            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@54.167.22.242 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/ sudo git clone https://github.com/LucidMedussa/Training /var/www/html"'
+            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@54.167.22.242 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/LucidMedussa/Training /var/www/html"'
             }
         }
 
